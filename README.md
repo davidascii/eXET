@@ -8,7 +8,7 @@ Soon**
 - npm run ios
 
 ### To-Do List:
-- [x] Configure Development Workflow/Setup
-- [ ] Set Up ESLint Rules
-- [ ] Configure Storybook for Documenting Components
+- [x] Configure Development Workflow/Setup.
+- [ ] Set Up ESLint Rules.
+- [ ] Configure Storybook for Documenting Components.
 - ...
