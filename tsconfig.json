@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json", /* Configurações recomendadas para o react native*/
+  "extends": "@tsconfig/react-native/tsconfig.json" /* Configurações recomendadas para o react native*/
   // "compilerOptions": {
   //   "module": "ES6",
   // }
@@ -30,7 +30,7 @@
   //   // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
 
   //   /* Modules */
-  //   "module": "ES6",                                /* Specify what module code is generated. FIXME change to commonjs*/ 
+  //   "module": "ES6",                                /* Specify what module code is generated. FIXME change to commonjs*/
   //   // "rootDir": "./",                                  /* Specify the root folder within your source files. */
   //   "moduleResolution": "node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
   //   // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */

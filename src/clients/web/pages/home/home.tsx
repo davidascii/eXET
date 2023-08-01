@@ -5,6 +5,6 @@ import {Text} from 'react-native';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <Text>Hello!</Text>
+        <Text>Hello!!</Text>
     </React.StrictMode>
 );

@@ -1,10 +1,12 @@
-import react from 'react';
-import {Platform, SafeAreaView, Text, View} from 'react-native';
+import React, {Component, PropsWithChildren} from 'react';
+import { Platform, SafeAreaView, Text, View } from 'react-native';
 
-function MySuperComponent(): JSX.Element {
-  return (
-    <Text> Olá mundo! {Platform.OS}</Text>
-  )
+type MyComponentProps = PropsWithChildren<{
+    title: string;
+}>;
+
+function MySuperComponent({title}: MyComponentProps): React.ReactElement {
+    return (<Text> Olá mundo! {Platform.OS} {title}</Text>);
 }
 
 export default MySuperComponent;

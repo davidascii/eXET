@@ -1,16 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import {createRoot} from "react-dom/client";
 import MySuperComponent from "../../../components/MySuperComponent";
-import { Text } from 'react-native'
 
 const searchParams = new URLSearchParams(document.location.search)
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-        <MySuperComponent />
-        <Text>{searchParams.get('id')}</Text>
-    </React.StrictMode>
-);
+const idParameter = searchParams.get('id')
+
+const contentElement = document.getElementById('root') as HTMLElement
+
+const root = createRoot(contentElement)
+
+root.render(<MySuperComponent title={idParameter ? idParameter : ''}/>)
+// ReactDOM.createRoot(document.getElementById('root')!).render(
+//     <MySuperComponent></MySuperComponent>
+// );
+
 // ReactDOM.render(
 //     <React.StrictMode>
 //         <MySuperComponent />

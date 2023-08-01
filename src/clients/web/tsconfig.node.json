@@ -3,7 +3,7 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Tentar trocar para 'node' depois . & tsconfig.json
     "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]
