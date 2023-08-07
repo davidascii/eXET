@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "web": "vite -c src/clients/web/vite.config.ts",
-        "web:build": "tsc -t ES2020 --lib \"ES2020\",\"DOM\",\"DOM.Iterable\" & vite build -c src/clients/web/vite.config.ts",
+        "web:build": "tsc -t ES2020 --p src/clients/web/tsconfig.json --lib \"ES2020\",\"DOM\",\"DOM.Iterable\" & vite build -c src/clients/web/vite.config.ts",
         "preview:web": "vite preview -c src/clients/web/vite.config.ts",
         "android": "react-native run-android",
         "ios": "react-native run-ios",
@@ -13,10 +13,17 @@
         "test": "jest"
     },
     "dependencies": {
+        "@react-native-async-storage/async-storage": "^1.19.1",
+        "buffer": "^6.0.3",
+        "gun": "^0.2020.1239",
         "react": "18.2.0",
         "react-dom": "^18.2.0",
         "react-native": "0.72.3",
-        "react-native-web": "^0.19.7"
+        "react-native-get-random-values": "^1.9.0",
+        "react-native-web": "^0.19.7",
+        "react-native-webview": "^13.3.1",
+        "react-native-webview-crypto": "^0.0.25",
+        "text-encoding": "^0.7.0"
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",
