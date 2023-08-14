@@ -21,7 +21,9 @@ async function userUpdateContacts(user: IGunUserInstance, SEA: ISEA, authorizePu
 
             const doesUserAlreadyHasCertStored = new Promise<boolean>((_success, _error) => {
                 user.get('certs/' + pubKey, (ack) => {
+                    // @ts-ignore
                     if (ack.err) {
+                        // @ts-ignore
                         return _error(ack.err);
                     } else {
                         _success(!(ack.put === undefined));
@@ -34,6 +36,7 @@ async function userUpdateContacts(user: IGunUserInstance, SEA: ISEA, authorizePu
                     if (!it) {
                         // TODO Verificar qual é o lugar que o pubKey (usuário a ser adicionado) quer escrever
                         // FIXME REMOVE DEFAULT eXET value
+                        // @ts-ignore
                         const cert = await SEA.certify(pubKey, {'#': {'*': 'eXET'}}, user._.sea);
 
                         user.get('certs/' + pubKey).put(cert);

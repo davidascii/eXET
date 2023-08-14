@@ -11,7 +11,9 @@ async function authenticateUser(gun: IGunInstance, user: IGunUserInstance, SEA: 
         }
 
         user.auth(usr, pwd, async (usrAuthResponse) => {
+            // @ts-ignore
             if (usrAuthResponse?.err) {
+                // @ts-ignore
                 return rejectedLogin(usrAuthResponse.err);
             } else {
                 await userUpdateContacts(user, SEA)

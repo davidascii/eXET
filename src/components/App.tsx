@@ -62,8 +62,8 @@ function App(): React.ReactElement {
                         backgroundColor: isDarkMode ? '#0a0a0a' : '#FFFFFF',
                     }}>
                     <Section title="Step One">
-                        Edit Bucetinha <Text style={styles.highlight}>App.tsx</Text> to change this
-                        screen and then come back to see your edits. 
+                        Edit app <Text style={styles.highlight}>App.tsx</Text> to change this
+                        screen and then come back to see your edits.
                     </Section>
                     <Section title="See Your Changes">
                         <Text>Reload instructions</Text>
