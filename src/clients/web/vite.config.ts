@@ -1,7 +1,9 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import {build, createFilter, defineConfig, optimizeDeps} from "vite";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
+import fs from 'fs/promises';
+import tailwindcss from 'tailwindcss';
 
 const root = resolve(__dirname, "pages");
 const outDir = resolve(__dirname, "../../../dist");
@@ -25,13 +27,25 @@ const moduleExclude = (match: any) => {
 export default defineConfig({
     root,
     plugins: [react(),
-        moduleExclude('text-encoding')],
+        moduleExclude('text-encoding'),
+    ],
+
+    define: {
+        global: 'window',
+    },
 
     resolve: {
         alias: {
             "react-native": "react-native-web",
+            'react-native-safe-area-context': 'expo-dev-menu/vendored/react-native-safe-area-context/src',
         },
     },
+    // css: {
+    //     postcss: {
+    //         plugins: [tailwindcss]
+    //     }
+    // },
+
     build: {
         outDir,
         emptyOutDir: true,
@@ -45,6 +59,7 @@ export default defineConfig({
     },
 
     optimizeDeps: {
+        // TODO REMOVER OU ARRUMAR DEPOIS
         include: [
             'gun',
             'gun/gun',
@@ -56,6 +71,29 @@ export default defineConfig({
             'gun/lib/radisk',
             'gun/lib/store',
             'gun/lib/rindexed',
-        ]
+        ],
+        esbuildOptions : {
+            resolveExtensions: [
+                '.web.js',
+                '.js',
+                '.jsx',
+                '.ts',
+                '.tsx',
+            ],
+            plugins: [
+                {
+                    name: 'load-rnvi-js-files-as-jsx',
+                    setup(build) {
+                        build.onLoad(
+                            { filter: /node_modules\\react-native-vector-icons\\.*\.js$/ },
+                            async (args) => ({
+                                loader: 'jsx',
+                                contents: await fs.readFile(args.path, 'utf8'),
+                            })
+                        );
+                    },
+                }
+            ]
+        }
     }
 });

@@ -13,6 +13,7 @@
 import PolyfillCrypto from 'react-native-webview-crypto';
 // import useGun from './useGun';
 //--GUN
+
 import React from 'react';
 import {authUser, createUser, logoutUser, testGun, startEvent, _createUser} from './contexts';
 import Section from '../../components/App';
@@ -26,8 +27,8 @@ import {
     View,
     useColorScheme,
 } from 'react-native';
-
-
+import AuthTextInput from "../../components/inputs/AuthTextInput";
+import LoginComponent from "../../containers/LoginComponent";
 
 function MyApp(): React.ReactElement {
     // const { user, SEA } = useGun();
@@ -38,7 +39,7 @@ function MyApp(): React.ReactElement {
     };
 
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <SafeAreaView>
             <StatusBar
                 barStyle={isDarkMode ? 'light-content' : 'dark-content'}
                 backgroundColor={backgroundStyle.backgroundColor}
@@ -49,7 +50,7 @@ function MyApp(): React.ReactElement {
             <Button onPress={() => logoutUser()} title='Logout user' />
             <Button onPress={() => testGun()} title='testGun GunJS' />
             <Button onPress={() => startEvent()} title='startEvent GunJS' />
-
+            <LoginComponent/>
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 style={backgroundStyle}

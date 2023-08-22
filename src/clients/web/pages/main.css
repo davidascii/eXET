@@ -1,0 +1,3 @@
+/*@tailwind base; manter o estilo normal dos componentes padrão do react*/
+@tailwind components;
+@tailwind utilities;
