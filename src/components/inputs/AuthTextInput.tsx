@@ -1,12 +1,13 @@
 import React, {Component, PropsWithChildren, StrictMode} from 'react';
-import {TextInputProps, View, StyleProp, ViewStyle, Platform} from 'react-native';
+import {TextInputProps, View, StyleProp, ViewStyle, Platform, TextInput as NativeTextInput} from 'react-native';
 // import {TextInput as TextInputPaper} from 'react-native-paper';
-import {TextInput as TextInputPaper} from 'react-native-paper';
+import {TextInput} from 'react-native-paper';
 import {TextInputProps as TextInputPropsPaper} from 'react-native-paper';
-import {NativeWindStyleSheet, styled} from "nativewind";
+import {NativeWindStyleSheet, styled} from 'nativewind';
 // const StyledView = styled(View);
 
-const StyledTextInputPaper = styled(TextInputPaper);
+// const StyledTextInputPaper = styled(TextInputPaper);
+const StyledTextInputPaper = TextInput;
 
 interface AuthTextInputProps extends TextInputPropsPaper {
     label: string,
@@ -42,14 +43,13 @@ class AuthTextInput extends Component<AuthTextInputProps, AuthTextInputState> {
             <StrictMode>
                 <StyledTextInputPaper
                     // className="background-color-dark"
+                    mode="outlined"
                     autoCorrect={false}
                     autoCapitalize={'none'}
-                    // outlineStyle={{...(Platform.OS === 'web' && {marginTop: '1.5px'})}} // https://github.com/callstack/react-native-paper/issues/3825
+                    // outlineStyle={{...(Platform.OS === 'web' && {marginTop: '2px'})}} // https://github.com/callstack/react-native-paper/issues/3825 https://github.com/callstack/react-native-paper/issues/4041
                     // activeOutlineColor={"#ff0000"}
-                    mode="outlined"
                     {...this.props}
-
-                    label={"Outlined input"}
+                    label={'Outlined input'}
                 />
             </StrictMode>
         );

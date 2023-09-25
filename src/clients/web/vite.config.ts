@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import {build, createFilter, defineConfig, optimizeDeps} from "vite";
+import {build, createFilter, defineConfig, optimizeDeps, ViteDevServer} from "vite";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import fs from 'fs/promises';

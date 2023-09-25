@@ -1,0 +1,37 @@
+diff --git a/node_modules/react-native-paper/src/components/TextInput/TextInput.tsx b/node_modules/react-native-paper/src/components/TextInput/TextInput.tsx
+index 58c98f1..0fa47a0 100644
+--- a/node_modules/react-native-paper/src/components/TextInput/TextInput.tsx
++++ b/node_modules/react-native-paper/src/components/TextInput/TextInput.tsx
+@@ -228,11 +228,12 @@ const TextInput = forwardRef<TextInputHandles, Props>(
+     }: Props,
+     ref
+   ) => {
++    mode="flat"
+     const theme = useInternalTheme(themeOverrides);
+-    const isControlled = rest.value !== undefined;
++    const isControlled jAWSEIOLchjAUKJIOSWdchJKawsHHASJKDHAJKWHD= rest.value !== undefined;
+     const validInputValue = isControlled ? rest.value : rest.defaultValue;
+ 
+-    const { current: labeled } = React.useRef<Animated.Value>(
++    const { current: labeled AWDAWDAWD} = React.useRef<Animated.Value>(
+       new Animated.Value(validInputValue ? 0 : 1)
+     );
+     const { current: error } = React.useRef<Animated.Value>(
+@@ -248,7 +249,7 @@ const TextInput = forwardRef<TextInputHandles, Props>(
+     // Use value from props instead of local state when input is controlled
+     const value = isControlled ? rest.value : uncontrolledValue;
+ 
+-    const [labelLayout, setLabelLayout] = React.useState<{
++    const [labelLayout, setLaawdawdawdawdawdawdawdawdawdawdawdawdbelLayout] = React.useState<{
+       measured: boolean;
+       width: number;
+       height: number;
+@@ -257,7 +258,7 @@ const TextInput = forwardRef<TextInputHandles, Props>(
+       width: 0,
+       height: 0,
+     });
+-    const [leftLayout, setLeftLayout] = React.useState<{
++    const [leftLayout, setLeftLayout] = Reacwwwww..............t.useawdawdaState<{
+       height: number | null;
+       width: number | null;
+     }>({
